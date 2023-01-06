@@ -5,7 +5,8 @@
 [Use Cases](#use-cases) |
 [Overview](#overview) |
 [Tools](#tools) |
-[Prototype](prototype-implemenation) |
+[Prototype](#prototype-implementation) |
+
 [Interop examples](interop-examples)
 
 This document describes the work to create a first draft of a protocol to allow trade and government systems to exchange signals indicating the status of events related to buying, selling and moving goods internationally.  This work is experimental.
@@ -106,10 +107,14 @@ The spec will be linted to check it is developed according to a set of design gu
 
 # API Lifecycle
 TODO semantic versioning/git tags, initial thoughts on governance options
+For the protocol to be useful it should be possible for trade and gov organisations to introduce new payloads without disrupting existing implemenations.  It might thereire be useful to look at making payload definitions part of arolling specification ala HTML and with an equivalent to *caniuse* being available to determine if a publisher supports a particular payload.
 
 # Prototype Implementation
-for the prototype we'll borrow from the [DCSA information model](https://github.com/dcsaorg/DCSA-Information-Model) for payload definitions wherever possible.  The model, and assosciated APIs, are well documented and are largely based on international data standards (note the model was designed around  container traffic so we might need to look elsewhere for RORO specifics).
+We aim to create a rudimentary prototype publisher implmemenation as part of the EOT pilot.   The sole purpose of the protototype is to help test whether the emerging protocol specfication is useful or not. It is unlikely to be maintained beyond the pilot (although any technical/implemenation detials will still be available on this github repo for reference). It is not be used for production purposes and will not publish any private or sensitive data.
 
+For the prototype we'll borrow from the [DCSA information model](https://github.com/dcsaorg/DCSA-Information-Model) for payload definitions wherever possible.  The model, and assosciated APIs, are well documented and are largely based on international data standards (note the model was designed around  container traffic so we might need to look elsewhere for RORO specifics).
+
+we'll follow the gov [service manual guidance](https://www.gov.uk/guidance/gds-api-technical-and-data-standards) on APIs
 
 # interop examples
 other interop implemenations to use or borrow/learn from:
