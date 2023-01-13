@@ -6,8 +6,7 @@
 [Overview](#overview) |
 [Tools](#tools) |
 [Prototype](#prototype-implementation) |
-
-[Interop examples](interop-examples)
+[Interop examples](#interop-examples)
 
 This document describes the work to create a first draft of a protocol to allow trade and government systems to exchange signals indicating the status of events related to buying, selling and moving goods internationally.  This work is experimental.
 
@@ -100,7 +99,7 @@ Using the AsyncAPI and OpenAPI standards to specify the API used by the protocol
 
 * creation of documentation that describes the technical details of what the API does
 * creation of mock servers that can help with testing the design without lots of development effort
-* generation of boilerplate code for language of choice (there are tools available for all the popular backend languages).
+* generation of code for your language of choice (there are tools available for all the popular backend languages).
 * security audits on authentication approach, identification of vulnerabilities etc.
 
 The spec will be linted to check it is developed according to a set of design guidelines (tbd)
@@ -122,6 +121,7 @@ other interop implemenations to use or borrow/learn from:
 borders
 * [DCSA event subscription](https://app.swaggerhub.com/apis/dcsaorg/DCSA_EBL/2.0.0-Beta-2#/Shipping%20Instructions/get_v2_shipping_instructions__shippingInstructionReference_) approach (webhook)  
 * NOTN (discussion pending)
+* Data Pipelines/waypoints:  [UNCEFACT Data Pipeline White Paper](https://unece.org/fileadmin/DAM/cefact/GuidanceMaterials/WhitePaperDataPipeline_Eng.pdf).  EU sponsored research: [Cassandra](https://cordis.europa.eu/project/id/261795) & [CORE](http://www.coreproject.eu/resources.aspx?filter=6073)
 
 Finance
 * FIX - electronic trading  - very simple, pre web, well adopted but possible challenges around multiple dialects
