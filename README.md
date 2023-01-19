@@ -33,7 +33,9 @@ OpenApi and AsyncAPI are open standards managed by the Linux Foundation.  The tw
 The specs can be written as JSON or YAML, but we prefer YAML for the parts on the protocol that will be of most interest to the business domain experts (for instance the signal payloads) as they will not necessarily have a technical background and YAML is easier to read/amend than JSON.
   
 # Use Cases
-TODO
+1. a trader moving goods under a customs procedure that does not require a pre-lodged customs declaration would like to take advantage of a new (fictional!) scheme being trialled by the government where traders that supply a 10 digit commodity code in advance of goods moving into the country can get an early warning of any checks and inspections that might delay the goods leaving the port.  The commodity
+   code must be supplied when the goods leave the port of departure and will be shared with several government departments.
+2. The government wants to alert traders about inspection decisions detailing which consignment has been selected and where the inspection will take place.
 
 # Overview
 
@@ -61,6 +63,8 @@ location:
   description:  url to collect a copy of the document
   example: https://api.example.com/docs/XYZ
   ```
+
+how do we avoid signal bloat?  Do we need to specify rules for payloads that prevent them ballooning into ad-hoc mechanisms for exchanging documents?  Does this matter?
 
 ## signal lifecycle
 TODO
@@ -90,9 +94,16 @@ TODO
 
 ## Identity and access management
 TODO
+how do we know who you say you are?  How do we know you have permission to see the data you are requesting?
 * registration (?)
-* authentication
+* authentication 
 * permissions  (can we reuse an entity/org access control concept from one of the EOT solutions?) 
+* roles
+
+# Entity identifiers
+* How do we uniquely identify supply chain participants? Will EORI do?
+* movement data: can we limit the entities we need to uniquely identify to **shipment**, **consignment** and **transport equipment** (UN-CEFACT Supply Chain Reference Data Model)?
+* How do we link document identifiers (invoice numbers, MRNs, Bol ref number etc) to a shipment/consignment? It would be challenging to create some kind of mapping service (who would run it?) - can we reuse the knowledge in the supply chain, e.g by asking publishers to "daisy chain" doc references attached to a UUID supplied by the initial contributor?
 
 # tools
 Using the AsyncAPI and OpenAPI standards to specify the API used by the protocol means that sine work can be automated, including:
