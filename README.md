@@ -2,11 +2,10 @@
 
 [Principles](#principles) |
 [Standards](#standards) |
-[Use Cases](#use-cases) |
 [Overview](#overview) |
 [Tools](#tools) |
 [Prototype](#prototype-implementation) |
-[Interop examples](#interop-examples)
+
 
 This document describes the work to create a first draft of a protocol to allow trade and government systems to exchange signals indicating the status of events related to buying, selling and moving goods internationally.  This work is experimental.
 
@@ -27,15 +26,9 @@ All the work will be done in the open and hosted in github. Please feel free to 
 * Per gov [standards](https://www.gov.uk/government/publications/recommended-open-standards-for-government/describing-restful-apis-with-openapi-3), if REST APIs are needed they will be specified using [OpenAPI](https://www.openapis.org/)
 * Payloads (the content of the signal message) will be exchanged as JSON.  Content can be validated using [JSON Schema](https://json-schema.org/).  There are tools available to automatically create the schemas based on the API specs, see [tools](#tools) below.
 
-
 OpenApi and AsyncAPI are open standards managed by the Linux Foundation.  The two standards are closely related: AsyncAPI builds on OpenAPI and allows description of things like channels and messages.  
 
 The specs can be written as JSON or YAML, but we prefer YAML for the parts on the protocol that will be of most interest to the business domain experts (for instance the signal payloads) as they will not necessarily have a technical background and YAML is easier to read/amend than JSON.
-  
-# Use Cases
-1. a trader moving goods under a customs procedure that does not require a pre-lodged customs declaration would like to take advantage of a new (fictional!) scheme being trialled by the government where traders that supply a 10 digit commodity code in advance of goods moving into the country can get an early warning of any checks and inspections that might delay the goods leaving the port.  The commodity
-   code must be supplied when the goods leave the port of departure and will be shared with several government departments.
-2. The government wants to alert traders about inspection decisions detailing which consignment has been selected and where the inspection will take place.
 
 # Overview
 
@@ -126,20 +119,5 @@ For the prototype we'll borrow from the [DCSA information model](https://github.
 
 we'll follow the gov [service manual guidance](https://www.gov.uk/guidance/gds-api-technical-and-data-standards) on APIs
 
-# interop examples
-other interop implemenations to use or borrow/learn from:
 
-borders
-* [DCSA event subscription](https://app.swaggerhub.com/apis/dcsaorg/DCSA_EBL/2.0.0-Beta-2#/Shipping%20Instructions/get_v2_shipping_instructions__shippingInstructionReference_) approach (webhook)  
-* NOTN (discussion pending)
-* Data Pipelines/waypoints:  [UNCEFACT Data Pipeline White Paper](https://unece.org/fileadmin/DAM/cefact/GuidanceMaterials/WhitePaperDataPipeline_Eng.pdf).  EU sponsored research: [Cassandra](https://cordis.europa.eu/project/id/261795) & [CORE](http://www.coreproject.eu/resources.aspx?filter=6073)
-
-Finance
-* FIX - electronic trading  - very simple, pre web, well adopted but possible challenges around multiple dialects
-* PSD2 (c.f open banking exchange)  provision of payment services , interesting because (EU) legislation-lead
-
-Industry led examples
-* [OpenTravel](https://opentravel.org/) - does not appear to be a web based presence for the spec, but available on request.
-* [OpenReferral](https://openreferraluk.org/about-standard) - local council data exchange 
-* [GTFS](https://github.com/google/transit/tree/master/gtfs-realtime/spec/en) - public transportation (an example feed - from Connecticut Department of Transportation - is hosted on the [Ably hub](https://ably.com/hub/cttransit/gtfsr)
 
